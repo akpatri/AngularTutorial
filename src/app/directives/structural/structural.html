@@ -1,0 +1,31 @@
+<h2>Structural Directive</h2>
+<h3>Use</h3>
+
+<ul *appStructuralDir="
+      let implictData;
+      let topicData=topic;
+      let dateData=date;
+      let input1Data=input1;
+      input1: 'input1-value' ;
+      input2:input2 ">
+  <li>implictData: {{implictData}}</li>
+  <li>topicData: {{topicData}}</li>
+  <li>dateData: {{dateData}}</li>
+  <li>input1: Fetched From Directive: {{input1Data}}</li>
+  <li>input2: Fetched From Compoenent Directly: {{input2}}</li>
+</ul>
+
+
+converted to -->
+<ng-template appStructuralDir let-implictData let-topicData="topic" let-dateData="date" let-input1Data="input1"
+  [appStructuralDirInput1]="'input1-value'" [appStructuralDirInput2]="input2">
+
+  <ul>
+    <li>implictData: {{implictData}}</li>
+    <li>topicData: {{topicData}}</li>
+    <li>dateData: {{dateData}}</li>
+    <li>input1: Fetched From Directive: {{input1Data}}</li>
+    <li>input2: Fetched From Component Directly: {{input2}}</li>
+  </ul>
+
+</ng-template>
