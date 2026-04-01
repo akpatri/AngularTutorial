@@ -1,0 +1,8 @@
+<h2>Attribute Directive</h2>
+<div>Attribute directive dont modify DOM tree: It is used to attach style and event</div>
+MouseEnter Color: <input type="text" [(ngModel)]="enterColor"> <br/>
+MouseLeave Color: <input type="text" [(ngModel)]="leaveColor">
+<ul>
+  <li>without input: <span appAttributeDir>This is without input</span></li>
+  <li>with input:<span appAttributeDir='red' [mouseEnterColor]="enterColor()" [mouseLeaveColor]="leaveColor()">This is with input</span></li>
+</ul>

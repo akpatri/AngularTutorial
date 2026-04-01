@@ -1,0 +1,33 @@
+<div class='border border-primary p-2 m-2'>
+  <h2>Parent Component</h2>
+  <h3>Parent → Child1</h3>
+
+  <input
+    type="text"
+    [ngModel]="parent_normal"
+    (ngModelChange)="
+      parent_normal = $event;
+      parent_signal.set($event);
+    ">
+  <h3>Receiving Data from Child&ngsp;1</h3>
+
+  <ul>
+    <li>Normal: {{ parent_received_normal }}</li>
+    <li>Signal: {{ parent_received_signal() }}</li>
+    <li>Bidirectional: {{ parent_model() }}</li>
+  </ul>
+  <app-child1
+    [child1NormalInput]="parent_normal"
+    [child1SignalInput]="parent_signal()"
+    [(child1BidirectionalInput)]="parent_model"
+    (child1NormalOutput)="handleNormalOutput($event)"
+    (child1SignalOutput)="handleChildSignal($event)">
+  </app-child1>
+  <app-child2>
+    <div parent-content>
+      <p>This content is shared from parent to child2 using content projection</p>
+    </div>
+  </app-child2>
+
+
+</div>

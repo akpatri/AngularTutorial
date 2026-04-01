@@ -1,0 +1,15 @@
+<nav class="navbar bg-dark text-white">
+
+		<a class="nav-link text-white" [routerLink]="'.'"><ng-content select="[subject]"></ng-content></a>
+
+		<!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+		<button class="navbar-toggler text-white" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+
+		<!-- Step 2: Add the ngbCollapse directive to the element below. -->
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse ">
+			<ul class="navbar-nav">
+        <ng-content select="[concepts]"></ng-content>
+			</ul>
+		</div>
+
+</nav>

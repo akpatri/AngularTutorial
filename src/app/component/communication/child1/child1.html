@@ -1,0 +1,18 @@
+<div class='border border-primary p-2 m-2'>
+  <h3>Child1</h3>
+  <h4>To parent</h4>
+  <input #box type="text" [(ngModel)]="child1BidirectionalInput">
+  <button (click)="sendNormalOutput(box.value)">
+    Send Normal Output
+  </button>
+  <button (click)="sendSignalOutput(box.value)">
+    Send Signal Output
+  </button>
+
+  <h4>From parent</h4>
+  <ul>
+    <li>Normal: {{ child1NormalInput }}</li>
+    <li>Signal: {{ child1SignalInput() }}</li>
+    <li>Bidirectional: {{ child1BidirectionalInput() }}</li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+<h2>Binding</h2>
+<h3>Various Types of Binding</h3>
+<label for="Binding input">Binding Input: </label>
+<input type="text" id="Binding input" #box (input)="handleInputChange($event)" [value]="model_data()">
+<ul>
+  <li>Text Interpolation Binding-->{{normal_data}}</li>
+  <li>Text Signal Interpolation Binding-->{{signal_data()}}</li>
+  <li>Attribute Binding:[attribute_name]="var"-->
+    <span [attr.title]="normal_data">Hover over me</span>
+  </li>
+  <li>Event Binding--> {{event()?.type}}</li>
+  <li>Two Way Binding--> <input type="text" [(ngModel)]="model_data"></li>
+</ul>

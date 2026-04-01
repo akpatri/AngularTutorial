@@ -1,0 +1,28 @@
+<ul>
+  @for(item of items; track $index; let i = $index, count=$count, even=$even, odd=$odd){
+  @if($first)
+  {
+  <li>First item: {{item}}</li>
+  }
+  @else if($last){
+  <li>Last item: {{item}}</li>
+  }
+  @else{
+  @switch (even) {
+  @case(true) {
+  <li>{{i}} of {{count-1}}: {{item}} is even</li>
+  }
+  @case(false) {
+  <li>{{i}} of {{count-1}}: {{item}} is odd</li>
+  }
+  @default {
+    <li>index either even or odd</li>
+  }
+  }
+  }
+
+  }
+  @empty{
+  <li>No items</li>
+  }
+</ul>

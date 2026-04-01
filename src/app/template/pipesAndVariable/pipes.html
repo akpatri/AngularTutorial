@@ -1,0 +1,6 @@
+<!-- variable for let is current and descedent view -->
+<ng-container>
+  <input type="text" #inputRef (input)="content = inputRef.value">
+  @let contentVar = inputRef.value ; <!-- //change of this cant update the template -->
+  <p>{{ contentVar |lowercase| noOfWords}}</p>
+</ng-container>

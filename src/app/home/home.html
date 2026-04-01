@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <div class="row vh-100">
+    <div class="col-12 col-sm-4 bg-black text-white">
+      @for (item of content; track $index) {
+      <div class="pt-3 border-bottom border-secondary">
+        <app-collapse-navbar>
+          <div subject>{{item.subject | titlecase }}</div>
+          <div concepts>
+            @for (concept of item.contents; track $index) {
+            <li class="ps-2 nav-item bg-light">
+              <a class="nav-link text-dark" [routerLink]="
+              [
+                {
+                  outlets:
+                    {
+                      render: [(item.subject| lowercase), (concept| lowercase)],
+
+                    }
+                }
+              ]">{{concept | titlecase}}</a>
+            </li>
+            }
+          </div>
+        </app-collapse-navbar>
+      </div>
+      }
+
+    </div>
+
+    <div class="col-12 col-sm-8 bg-light text-black ">
+      <router-outlet name="render"></router-outlet>
+    </div>
+
+  </div>
+</div>
