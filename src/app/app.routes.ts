@@ -13,7 +13,8 @@ import { Directives } from './directives/directives';
 import { Attribute } from './directives/attribute/attribute';
 import { Structural } from './directives/structural/structural';
 import { DependencyInjection } from './dependency-injection/dependency-injection';
-import { Services } from './dependency-injection/services/services';
+import { Dependencyproviders } from './dependency-injection/dependencyproviders/dependencyproviders';
+import { ProviderHierarchy } from './dependency-injection/provider-hierarchy/provider-hierarchy';
 
 
 export const routes: Routes = [
@@ -34,9 +35,14 @@ export const routes: Routes = [
         outlet: 'render',
         children: [
           {
-            path: 'services',
-            component: Services
+            path: 'dependencyproviders',
+            component: Dependencyproviders
           },
+          {
+            path:'providerhierarchy',
+            component:ProviderHierarchy
+          },
+
 
         ]
       },

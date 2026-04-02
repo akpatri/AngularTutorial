@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Services } from './services';
+import { HttpClient } from './http-client';
 
-describe('Services', () => {
-  let component: Services;
-  let fixture: ComponentFixture<Services>;
+describe('HttpClient', () => {
+  let component: HttpClient;
+  let fixture: ComponentFixture<HttpClient>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Services],
+      imports: [HttpClient],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Services);
+    fixture = TestBed.createComponent(HttpClient);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

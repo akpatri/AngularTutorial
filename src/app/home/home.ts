@@ -15,9 +15,9 @@ export class Home {
     {subject: "Component", contents: ["communication", "Selectors", "Lifecycle"]},
     {subject: "Templates", contents: ["Binding", "controlflow","pipes"]},
     {subject: "Directives", contents: ["Attribute", "Structural"]},
-    {subject: "DependencyInjection", contents: ["Services", "Dependency Injection2"]},
+    {subject: "DependencyInjection", contents: ["DependencyProviders", "ProviderHierarchy"]},
     {subject: "Routing", contents: ["Routing1", "Routing2"]},
-    {subject: "Forms", contents: ["Basic", "Forms2"]},
+    {subject: "Forms", contents: ["Template", "Reactive", "Signal", "Validation"]},
     {subject: "HttpClient", contents: ["HttpClient1", "HttpClient2"]}
   ];
 }
