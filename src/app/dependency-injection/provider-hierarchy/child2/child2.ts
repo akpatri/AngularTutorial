@@ -11,9 +11,7 @@ import { DataService } from '../data-service';
   providers: [DataService]
 })
 export class Child2 {
-
-    constructor(private dataService:DataService){ //injection using constructor
-        this.dataService.data ='';
-    }
+    dataService:DataService=inject(DataService); //injection using inject function
+    
 
 }
