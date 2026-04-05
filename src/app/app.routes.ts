@@ -15,6 +15,9 @@ import { Structural } from './directives/structural/structural';
 import { DependencyInjection } from './dependency-injection/dependency-injection';
 import { Dependencyproviders } from './dependency-injection/dependencyproviders/dependencyproviders';
 import { ProviderHierarchy } from './dependency-injection/provider-hierarchy/provider-hierarchy';
+import { TemplateForm } from './form/template-form/template-form';
+import { ReactiveForm } from './form/reactive-form/reactive-form';
+import { SignalForm } from './form/signal-form/signal-form';
 
 
 export const routes: Routes = [
@@ -24,10 +27,23 @@ export const routes: Routes = [
     children: [
 
       {
-        path: 'basic',
+        path: 'forms',
         component: Form,
-        outlet: 'render'
-
+        outlet: 'render',
+        children:[
+          {
+            path:'templateform',
+            component:TemplateForm
+          },
+          {
+            path:'reactiveform',
+            component:ReactiveForm
+          },
+          {
+            path:'signalform',
+            component:SignalForm
+          }
+        ]
       },
       {
         path: 'dependencyinjection',

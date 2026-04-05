@@ -17,7 +17,7 @@ export class Home {
     {subject: "Directives", contents: ["Attribute", "Structural"]},
     {subject: "DependencyInjection", contents: ["DependencyProviders", "ProviderHierarchy"]},
     {subject: "Routing", contents: ["Routing1", "Routing2"]},
-    {subject: "Forms", contents: ["Template", "Reactive", "Signal", "Validation"]},
+    {subject: "Forms", contents: ["TemplateForm", "ReactiveForm", "SignalForm", "Validation"]},
     {subject: "HttpClient", contents: ["HttpClient1", "HttpClient2"]}
   ];
 }

@@ -1,0 +1,54 @@
+<h3>
+  Reactive Form
+</h3>
+<h4>Form Control: Single Input Form</h4>
+<input [formControl]="inputCtrl" />
+data: {{ inputCtrl.value }}
+
+<h4>FormGroup: Multi Input Forms</h4>
+<form [formGroup]="formGroup1">
+  <input formControlName="inputGrpCtrl" />
+  <div formGroupName="inputGrp1">
+    <input type="text" formControlName="inputNxtGrp1Ctrl1" />
+    <input type="text" formControlName="inputNxtGrp1Ctrl2" />
+  </div>
+</form>
+<button type="button" (click)="updateFormGroup()">Update From Group</button>
+<button type="button" (click)="updateFormGroupPartially()">Update Partially</button>
+data: {{ formGroup1.value | json }}
+
+<h4>Form Array: Dynamic input field Creation</h4>
+<button type="button" (click)="addInput()">Create input</button>
+<button type="button" (click)="removeInput()">Remove input</button>
+<br>
+@for (ctrl of formArray.controls; track $index; let i = $index) {
+  <div>
+    <input [formControl]="ctrl" placeholder="Input {{ i }}">
+  </div>
+}
+<pre>{{ formArray.value | json}}</pre>
+
+<h4>Form Builder</h4>
+<input type="text" name="" id="" [formControl]="fbContInput">
+<form action="" [formGroup]="fbGrpInput">
+  <input type="text" name="" id="" formControlName="fbgControlInput">
+  <div formGroupName="fbgGrpInput">
+    <input type="text" name="" id="" formControlName="ctrl1">
+  </div>
+  <button type="button" (click)="addArr()" >Add Input</button>
+  <button type="button" (click)="removeArr()">Remove Input</button>
+  <div formArrayName="arr">
+    @for (ctrl of arr.controls; track $index; let i=$index) {
+      <input [formControlName]="i"> <!-- You’re dynamically pointing to an existing control by index. -->
+    }
+  </div>
+</form>
+dataCont:{{fbContInput.value|json}} <br>
+dataNested: {{ fbGrpInput.get('fbgGrpInput.ctrl1')?.value }} <br>
+dataArray:{{fbGrpInput.get('arr')?.value |json}} <br>
+
+
+
+
+
+

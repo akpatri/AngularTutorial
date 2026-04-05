@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Variable } from './variable';
+import { TemplateValidation } from './template-validation';
 
-describe('Variable', () => {
-  let component: Variable;
-  let fixture: ComponentFixture<Variable>;
+describe('TemplateValidation', () => {
+  let component: TemplateValidation;
+  let fixture: ComponentFixture<TemplateValidation>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Variable],
+      imports: [TemplateValidation],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Variable);
+    fixture = TestBed.createComponent(TemplateValidation);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

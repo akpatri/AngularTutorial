@@ -1,0 +1,8 @@
+<h3>Signal Form</h3>
+name: <input type="text" id="" [formField]="signalForm.name">
+email: <input type="email" [formField]="signalForm.email">
+<button (click)="updateForm()">Update Form</button>
+Data-> name:{{signalForm.name().value()}} email:{{signalForm.email().value()}}
+
+
+
